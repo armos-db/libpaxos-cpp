@@ -10,6 +10,7 @@
 #include <boost/function.hpp>
 #include <boost/optional.hpp>
 
+#include "request.hpp"
 #include "../../error.hpp"
 #include "../../request_queue/queue.hpp"
 

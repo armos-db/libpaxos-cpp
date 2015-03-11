@@ -7,7 +7,7 @@ namespace paxos { namespace detail { namespace quorum {
 
 client_view::client_view (
    boost::asio::io_service &    io_service)
-   : view::view (io_service)
+   : view (io_service)
 {
 }
 

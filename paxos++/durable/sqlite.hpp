@@ -5,7 +5,7 @@
 #ifndef LIBPAXOS_CPP_DURABLE_SQLITE_HPP
 #define LIBPAXOS_CPP_DURABLE_SQLITE_HPP
 
-#include <sqlite3.h>
+#include "sqlite3.h"
 
 #include "storage.hpp"
 

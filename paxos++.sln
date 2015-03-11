@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "paxos++", "paxos++\paxos++.vcxproj", "{0750968C-D82D-4D30-A3C6-FFA6BB386B85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{4CCAE7E4-69C8-407D-86E8-313BCA4A931F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "introduction_1_client", "examples\introduction_1\introduction_1_client.vcxproj", "{55EB9705-6CF2-4222-A359-55F6C159B5F1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "introduction_1_server", "examples\introduction_1\introduction_1_server.vcxproj", "{B213D3DC-2A76-424F-981B-926FE267A57D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0750968C-D82D-4D30-A3C6-FFA6BB386B85}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0750968C-D82D-4D30-A3C6-FFA6BB386B85}.Debug|Win32.Build.0 = Debug|Win32
+		{0750968C-D82D-4D30-A3C6-FFA6BB386B85}.Release|Win32.ActiveCfg = Release|Win32
+		{0750968C-D82D-4D30-A3C6-FFA6BB386B85}.Release|Win32.Build.0 = Release|Win32
+		{55EB9705-6CF2-4222-A359-55F6C159B5F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{55EB9705-6CF2-4222-A359-55F6C159B5F1}.Debug|Win32.Build.0 = Debug|Win32
+		{55EB9705-6CF2-4222-A359-55F6C159B5F1}.Release|Win32.ActiveCfg = Release|Win32
+		{55EB9705-6CF2-4222-A359-55F6C159B5F1}.Release|Win32.Build.0 = Release|Win32
+		{B213D3DC-2A76-424F-981B-926FE267A57D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B213D3DC-2A76-424F-981B-926FE267A57D}.Debug|Win32.Build.0 = Debug|Win32
+		{B213D3DC-2A76-424F-981B-926FE267A57D}.Release|Win32.ActiveCfg = Release|Win32
+		{B213D3DC-2A76-424F-981B-926FE267A57D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{55EB9705-6CF2-4222-A359-55F6C159B5F1} = {4CCAE7E4-69C8-407D-86E8-313BCA4A931F}
+		{B213D3DC-2A76-424F-981B-926FE267A57D} = {4CCAE7E4-69C8-407D-86E8-313BCA4A931F}
+	EndGlobalSection
+EndGlobal

@@ -13,7 +13,7 @@ server_view::server_view (
    boost::asio::io_service &                    io_service,
    boost::asio::ip::tcp::endpoint const &       endpoint,
    paxos::configuration const &                 configuration)
-   : view::view (io_service),
+   : view (io_service),
      majority_factor_ (configuration.majority_factor ()),
      our_endpoint_ (endpoint)
 {
@@ -109,6 +109,7 @@ server_view::who_is_our_leader ()
    }
 
    PAXOS_UNREACHABLE ();
+    return boost::none;
 }
 
 

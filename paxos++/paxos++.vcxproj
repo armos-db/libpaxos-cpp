@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0750968C-D82D-4D30-A3C6-FFA6BB386B85}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>paxos</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>Z:\Dev\Depends_vc12\boost_1_56_0;$(IncludePath)</IncludePath>
+    <LibraryPath>Z:\Dev\Depends_vc12\boost_1_56_0\lib32-msvc-12.0;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>Z:\Dev\Depends_vc12\boost_1_56_0;$(IncludePath)</IncludePath>
+    <LibraryPath>Z:\Dev\Depends_vc12\boost_1_56_0\lib32-msvc-12.0;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;PAXOS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>-D_WIN32_WINNT=0x0501 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;PAXOS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>-D_WIN32_WINNT=0x0501 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="client.cpp" />
+    <ClCompile Include="configuration.cpp" />
+    <ClCompile Include="detail\client\protocol\initiate_request.cpp" />
+    <ClCompile Include="detail\command.cpp" />
+    <ClCompile Include="detail\command_dispatcher.cpp" />
+    <ClCompile Include="detail\error.cpp" />
+    <ClCompile Include="detail\io_thread.cpp" />
+    <ClCompile Include="detail\parser.cpp" />
+    <ClCompile Include="detail\paxos_context.cpp" />
+    <ClCompile Include="detail\quorum\client_view.cpp" />
+    <ClCompile Include="detail\quorum\server.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)server_quorum</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)server_quorum</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="detail\quorum\server_view.cpp" />
+    <ClCompile Include="detail\quorum\view.cpp" />
+    <ClCompile Include="detail\strategy\basic_paxos\factory.cpp" />
+    <ClCompile Include="detail\strategy\basic_paxos\protocol\strategy.cpp" />
+    <ClCompile Include="detail\tcp_connection.cpp" />
+    <ClCompile Include="durable\heap.cpp" />
+    <ClCompile Include="durable\sqlite.cpp" />
+    <ClCompile Include="durable\sqlite3.c" />
+    <ClCompile Include="durable\storage.cpp" />
+    <ClCompile Include="server.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="client.hpp" />
+    <ClInclude Include="configuration.hpp" />
+    <ClInclude Include="detail\client\protocol\initiate_request.hpp" />
+    <ClInclude Include="detail\client\protocol\request.hpp" />
+    <ClInclude Include="detail\command.hpp" />
+    <ClInclude Include="detail\command_dispatcher.hpp" />
+    <ClInclude Include="detail\error.hpp" />
+    <ClInclude Include="detail\io_thread.hpp" />
+    <ClInclude Include="detail\parser.hpp" />
+    <ClInclude Include="detail\paxos_context.hpp" />
+    <ClInclude Include="detail\quorum\client_view.hpp" />
+    <ClInclude Include="detail\quorum\server.hpp" />
+    <ClInclude Include="detail\quorum\server_view.hpp" />
+    <ClInclude Include="detail\quorum\view.hpp" />
+    <ClInclude Include="detail\request_queue\queue.hpp" />
+    <ClInclude Include="detail\strategy\basic_paxos\factory.hpp" />
+    <ClInclude Include="detail\strategy\basic_paxos\protocol\strategy.hpp" />
+    <ClInclude Include="detail\strategy\factory.hpp" />
+    <ClInclude Include="detail\strategy\request.hpp" />
+    <ClInclude Include="detail\strategy\strategy.hpp" />
+    <ClInclude Include="detail\tcp_connection.hpp" />
+    <ClInclude Include="detail\tcp_connection_fwd.hpp" />
+    <ClInclude Include="detail\util\conversion.hpp" />
+    <ClInclude Include="detail\util\debug.hpp" />
+    <ClInclude Include="detail\util\debug_log_log4cxx.hpp" />
+    <ClInclude Include="detail\util\singleton.hpp" />
+    <ClInclude Include="durable\heap.hpp" />
+    <ClInclude Include="durable\sqlite.hpp" />
+    <ClInclude Include="durable\sqlite3.h" />
+    <ClInclude Include="durable\storage.hpp" />
+    <ClInclude Include="exception\exception.hpp" />
+    <ClInclude Include="server.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="detail\command.inl" />
+    <None Include="detail\paxos_context.inl" />
+    <None Include="detail\quorum\server_view.inl" />
+    <None Include="detail\request_queue\queue.inl" />
+    <None Include="detail\strategy\factory.inl" />
+    <None Include="detail\strategy\request.inl" />
+    <None Include="detail\strategy\strategy.inl" />
+    <None Include="detail\util\conversion.inl" />
+    <None Include="detail\util\debug_log_log4cxx.inl" />
+    <None Include="detail\util\singleton.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

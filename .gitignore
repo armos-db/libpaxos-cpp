@@ -56,3 +56,10 @@ test/connection_close2
 test/durability1
 test/durability2
 test/durability3
+
+Debug/
+ipch/
+*.opensdf
+*.sdf
+*.suo
+*.user
