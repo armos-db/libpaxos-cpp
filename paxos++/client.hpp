@@ -14,6 +14,7 @@
 #include "detail/client/protocol/request.hpp"
 
 #include "configuration.hpp"
+#include "dllmain.h"
 
 namespace paxos {
 
@@ -90,7 +91,7 @@ namespace paxos {
   
   
  */
-class client
+class PAXOS_API client
 {
 public:
 

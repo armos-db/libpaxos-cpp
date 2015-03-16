@@ -176,6 +176,9 @@
     <ClInclude Include="server.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="dllmain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="detail\quorum\server_view.inl">

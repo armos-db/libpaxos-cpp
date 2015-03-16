@@ -18,6 +18,7 @@
 #include "detail/tcp_connection_fwd.hpp"
 
 #include "configuration.hpp"
+#include "dllmain.h"
 
 namespace paxos {
 
@@ -84,7 +85,7 @@ namespace paxos {
   
   
  */
-class server
+class PAXOS_API server
 {
 public:
 
